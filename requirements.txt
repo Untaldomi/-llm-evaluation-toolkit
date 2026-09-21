@@ -1,0 +1,3 @@
+# LLM Evaluation Toolkit Dependencies
+# Designed to run with zero or minimal external dependencies (Standard Library + optional colorama)
+colorama>=0.4.6

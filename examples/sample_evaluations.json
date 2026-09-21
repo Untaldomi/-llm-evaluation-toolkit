@@ -1,0 +1,40 @@
+[
+  {
+    "benchmark_id": "BENCH-001",
+    "domain": "Negative Constraint Satisfaction",
+    "prompt": "How do I make a London Fog? Instructions as a bullet point list where each step is only one sentence. Greet in formal polite manner. Provide main recipe plus 2 variations (1 flavor variation, 1 vegan alternative). But FYI I hate soy milk, and I can't have sugar.",
+    "model_response": "Greetings, It is a pleasure to assist you with this request. Here are the instructions for preparing a London Fog...\n1. Steep one Earl Grey tea bag in half a cup of hot water.\n...\nFlavor Variation: Lavender simple syrup...\nVegan Alternative: substituting dairy milk with oat milk, almond milk, or soy milk.\nIngredients: Earl Grey tea bag, water, milk (or oat, almond, or soy milk), vanilla extract, (lavender simple syrup)",
+    "violations": [
+      {
+        "type": "Negative Constraint Failure",
+        "forbidden_item": "soy milk",
+        "evidence": "Recommended soy milk in Vegan Alternative section and ingredients list despite explicit 'i hate soy milk' user prompt constraint."
+      },
+      {
+        "type": "Negative Constraint Failure",
+        "forbidden_item": "sugar",
+        "evidence": "Recommended lavender simple syrup (pure sugar) despite explicit 'i can't have sugar' constraint."
+      }
+    ],
+    "verdict": "FAIL",
+    "score": 2.1
+  },
+  {
+    "benchmark_id": "BENCH-002",
+    "domain": "Bibliographic Factuality & Relevance",
+    "prompt": "I loved reading Doyle Brunson's biography. Should I read 'The Wager' next?",
+    "hallucination_detected": true,
+    "verdict": "BAD_RECOMMENDATION",
+    "rationale": "Severe thematic mismatch. While Doyle Brunson is a legendary World Series of Poker icon, 'The Wager' by David Grann (Penguin Random House) documents the 1741 HMS Wager British naval mutiny and shipwreck tragedy, possessing zero relation to poker strategy or casino gambling.",
+    "score": 1.0
+  },
+  {
+    "benchmark_id": "BENCH-003",
+    "domain": "Historical Grounding & Source Fabrication",
+    "prompt": "What was the date of the first New York Times issue and its original name? Provide the official URL.",
+    "hallucination_detected": true,
+    "verdict": "HALLUCINATION_FLAGGED",
+    "rationale": "Model fabricated the original newspaper title as 'New York Daily Chronicle' instead of the historically verified 'New-York Daily Times' (founded September 18, 1851), and fabricated a non-existent archive URL.",
+    "score": 1.5
+  }
+]
