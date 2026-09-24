@@ -90,7 +90,7 @@ Detailed evaluation rubrics and methodologies are documented in [docs/methodolog
 ---
 
 ## 👤 Author
-** Rafael Tifá**
+**Rafael Tifá**
 * 📍 New York, NY
 * 💼 Bilingual AI Quality Analyst & IT Systems Specialist
 * 🌐 GitHub: [@Untaldomi](https://github.com/Untaldomi)
